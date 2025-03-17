@@ -11,7 +11,7 @@ function ListingMapView({ type }) {
   const [conditionCount, setConditionCount] = useState();
   const [amountCount, setAmountCount] = useState(0);
   const [coordinates, setCoordinates] = useState();
-  const [typeCount, setTypeCount] = useState(); // donner or requset
+
   useEffect(() => {
     getLatestListing();
   }, []);

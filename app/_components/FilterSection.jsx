@@ -14,7 +14,7 @@ function FilterSection({
   setSurplusTypeCount,
 }) {
   return (
-    <div className="py-2 px-3 grid grid-cols-2 md:flex gap-2">
+    <div className="py-2 px-3 flex grid-cols-3  md:flex gap-2">
       <Select
         onValueChange={(value) =>
           value == "All"

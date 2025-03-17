@@ -36,7 +36,7 @@ function Listing({
 
   return (
     <div>
-      <div className="p-3 flex gap-6">
+      <div className=" flex-col md:flex-row lg:flex-row  p-3 flex gap-6">
         <GoogleSearch
           selectedAddress={(p) => {
             searchAddress(p);
@@ -48,6 +48,7 @@ function Listing({
           <Search className="h-4 w-4" /> Search
         </Button>
       </div>
+
       <FilterSection
         setAmountCount={setAmountCount}
         setConditionCount={setConditionCount}

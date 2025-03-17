@@ -53,11 +53,15 @@ function Header() {
       </div>
       <div className="flex gap-2 items-center">
         <Link href={"/add-new-listing"}>
-          <Button className="flex gap-2">
+          <Button className="hidden gap-2 md:flex lg:flex">
             <Plus className="w-5 h-5" /> Post Your Ad
           </Button>
         </Link>
-
+        <Link href={"/add-new-listing"}>
+          <Button className=" block p-[12px] sm:block md:hidden lg:hidden rounded-[100%]">
+            <Plus className="w-5" />
+          </Button>
+        </Link>
         {isSignedIn ? (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

@@ -8,13 +8,9 @@ const containerStyle = {
 };
 
 function MapSection({ coordinates, listings }) {
-  //   const { isLoaded } = useJsApiLoader({
-  //     id: "google-map-script",
-  //     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_PLACE_API_KEY,
-  //   });
   const [center, setCenter] = useState({
-    lat: 30.0444,
-    lng: 31.2357,
+    lat: 31.2001,
+    lng: 29.9187,
   });
   const [map, setMap] = React.useState(null);
 
@@ -23,7 +19,6 @@ function MapSection({ coordinates, listings }) {
   }, [coordinates]);
 
   const onLoad = React.useCallback(function callback(map) {
-    // This is just an example of getting and using the map instance!!! don't just blindly copy!
     const bounds = new window.google.maps.LatLngBounds(center);
     map.fitBounds(bounds);
 
