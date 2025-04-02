@@ -49,16 +49,19 @@ export default function Page() {
               </a>
 
               <h1 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
-                Welcome to Squid 🦑
+                Welcome to Ne3ma
               </h1>
 
               <p className="mt-4 leading-relaxed text-gray-500">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
+                Ne3ma is a platform dedicated to reducing waste and supporting
+                communities in need. By connecting businesses, individuals, and
+                NGOs, we make it easy to donate, request, and redistribute
+                surplus food, clothing, and essential supplies. Together, we can
+                create a more sustainable and equitable future.
               </p>
             </div>
 
-            <SignUp />
+            <SignUp afterSignUpUrl="/donate" />
           </div>
         </main>
       </div>

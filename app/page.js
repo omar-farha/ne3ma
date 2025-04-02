@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
-import ListingMapView from "./_components/ListingMapView";
+// import ListingMapView from "./_components/ListingMapView";
+import HomePage from "./_components/HomePage";
 export default function Home() {
   return (
-    <div className=" p-10">
-      <ListingMapView type="Donate" />
+    <div className="">
+      {/* <ListingMapView type="Donate" /> */}
+      <HomePage />
     </div>
   );
 }

@@ -9,9 +9,12 @@ import React, { useState } from "react";
 import { toast } from "sonner";
 
 // Prevent hydration error
-const GoogleSearch = dynamic(() => import("@/app/_components/GoogleSearch"), {
-  ssr: false,
-});
+const GoogleSearch = dynamic(
+  () => import("@/app/(routes)/Listing-Map-view/_components/GoogleSearch"),
+  {
+    ssr: false,
+  }
+);
 
 function AddNewListing() {
   const [selectedAddress, setSelectedAddress] = useState();

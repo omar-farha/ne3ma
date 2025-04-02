@@ -1,8 +1,8 @@
 "use client";
 import { supabase } from "@/utils/supabase/client";
-import Listing from "./Listing";
+import Listing from "./_components/Listing";
 import { useEffect, useState } from "react";
-import MapSection from "./MapSection";
+import MapSection from "./_components/MapSection";
 
 function ListingMapView({ type }) {
   const [listings, setListings] = useState([]);
@@ -33,34 +33,6 @@ function ListingMapView({ type }) {
     }
   };
 
-  // const handelSearchClick = async () => {
-  //   console.log(searchAddress);
-  //   const searchTrem = searchAddress?.value?.structured_formatting?.main_text;
-  //   console.log("%" + searchTrem + "%");
-
-  //   let query = supabase
-  //     .from("listing")
-  //     .select(`*, listingImages(url, listing_id)`)
-  //     .eq("active", true)
-  //     .eq("type", type)
-  //     .gte("surplusType", surplusTypeCount)
-  //     .gte("condition", conditionCount)
-  //     .gte("amount", amountCount)
-  //     .like("address", "%" + searchTrem + "%")
-  //     .order("id", { ascending: false });
-
-  // if (surplusTypeCount) {
-  //   query = query.gte("surplusType", surplusTypeCount);
-  // }
-  // const { data, error } = await query;
-  //   if (data) {
-  //     setListings(data);
-  //     console.log(data);
-  //   }
-  //   if (error) {
-  //     console.log(error);
-  //   }
-  // };
   const handelSearchClick = async () => {
     if (
       !searchAddress ||
@@ -98,7 +70,7 @@ function ListingMapView({ type }) {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
       <div className="">
         <Listing
           listings={listings}

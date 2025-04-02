@@ -17,6 +17,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 function Header() {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
   const path = usePathname();
   const { user, isSignedIn } = useUser();
   useEffect(() => {
@@ -24,16 +27,16 @@ function Header() {
   }, []);
 
   return (
-    <div className="p-4 px-10 flex justify-between  items-center shadow-sm fixed top-0 w-full bg-white z-10">
+    <div className="p-4 px-10 flex justify-between  items-center shadow-sm fixed top-0 w-full bg-white z-50">
       <div className="flex gap-12 items-center">
         <Link href={"/"}>
           <Image src={logo} width={130} height={130} alt="logo" />
         </Link>
         <ul className="hidden md:flex gap-10">
-          <Link href={"/"}>
+          <Link href={"/donate"}>
             <li
               className={`"hover:text-primary cursor-pointer" ${
-                path == "/" && "text-primary"
+                path == "/donate" && "text-primary"
               }`}
             >
               Donate
@@ -52,16 +55,20 @@ function Header() {
         </ul>
       </div>
       <div className="flex gap-2 items-center">
-        <Link href={"/add-new-listing"}>
-          <Button className="hidden gap-2 md:flex lg:flex">
-            <Plus className="w-5 h-5" /> Post Your Ad
-          </Button>
-        </Link>
-        <Link href={"/add-new-listing"}>
-          <Button className=" block p-[12px] sm:block md:hidden lg:hidden rounded-[100%]">
-            <Plus className="w-5" />
-          </Button>
-        </Link>
+        {!isHomePage && (
+          <>
+            <Link href={"/add-new-listing"}>
+              <Button className="hidden gap-2 md:flex lg:flex">
+                <Plus className="w-5 h-5" /> Post Your Ad
+              </Button>
+            </Link>
+            <Link href={"/add-new-listing"}>
+              <Button className="block p-[12px] sm:block md:hidden lg:hidden rounded-[100%]">
+                <Plus className="w-5" />
+              </Button>
+            </Link>
+          </>
+        )}
         {isSignedIn ? (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
