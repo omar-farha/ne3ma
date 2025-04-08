@@ -51,7 +51,9 @@ function Header() {
               Request
             </li>
           </Link>
-          <li className=" hover:text-primary cursor-pointer">Agent Finder</li>
+          <Link href={"/contact-us"}>
+            <li className=" hover:text-primary cursor-pointer">Contact Us</li>
+          </Link>
         </ul>
       </div>
       <div className="flex gap-2 items-center">

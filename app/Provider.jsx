@@ -2,6 +2,7 @@
 import { LoadScript } from "@react-google-maps/api";
 
 import Header from "./_components/Header";
+import ChatBot from "./_components/ChatBot";
 
 function Provider({ children }) {
   return (
@@ -11,6 +12,7 @@ function Provider({ children }) {
         libraries={["places"]}
       >
         <Header />
+        <ChatBot />
         <div className="mt-[110px]">{children}</div>
       </LoadScript>
     </div>
