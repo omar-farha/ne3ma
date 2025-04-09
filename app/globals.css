@@ -162,10 +162,9 @@ body {
 /* Chatbot Popup */
 .chatbot-popup {
   position: fixed;
-  bottom: 90px;
-  right: 35px;
+  bottom: 50px;
+  right: 100px;
   width: 420px;
-  height: 580px;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
@@ -177,6 +176,7 @@ body {
   z-index: 999;
 }
 
+.container .show-chatbot .chatbot-popup,
 .chatbot-popup.active {
   transform: scale(1);
   opacity: 1;
