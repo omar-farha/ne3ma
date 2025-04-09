@@ -1,4 +1,4 @@
-import MapSection from "@/app/(routes)/Listing-Map-view/_components/MapSection~";
+import MapSection from "@/app/(routes)/Listing-Map-view/_components/MapSection";
 import { Button } from "@/components/ui/button";
 import { GoogleMap } from "@react-google-maps/api";
 import { MapPin, Share } from "lucide-react";
