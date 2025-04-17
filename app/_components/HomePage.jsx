@@ -22,7 +22,9 @@ import { PeopleReact } from "./PeopleReact";
 import { AnimatedTestimonialsDemo } from "./AboutUs";
 import Pricing from "./Pricing";
 import Footer from "./Footer";
+
 // import videoTO from "@/public/TutorislViedio.mp4";
+
 const heroMotion = {
   start: {},
   end: {

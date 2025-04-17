@@ -34,26 +34,24 @@ const ContactPage = () => {
             <div className="p-4">
               <Phone size={32} className="mx-auto pb-3 text-primary" />
               <span className="block font-medium text-lg">Phone No.</span>
-              <span className="block pt-1 text-gray-600">1-2392-23928-2</span>
+              <span className="block pt-1 text-gray-600">01141412551</span>
             </div>
             <div className="p-4">
               <Mail size={32} className="mx-auto pb-3 text-primary" />
               <span className="block font-medium text-lg">E-mail</span>
-              <span className="block pt-1 text-gray-600">mail@company.com</span>
+              <span className="block pt-1 text-gray-600">ne3ma@gmail.com</span>
             </div>
             <div className="p-4">
               <MapPin size={32} className="mx-auto pb-3 text-primary" />
               <span className="block font-medium text-lg">Address</span>
               <span className="block pt-1 text-gray-600">
-                2939 Patrick Street, Victoria TX, United States
+                cairo - Egypt, 12345
               </span>
             </div>
             <div className="p-4">
               <Clock size={32} className="mx-auto pb-3 text-primary" />
               <span className="block font-medium text-lg">Opening Hours</span>
-              <span className="block pt-1 text-gray-600">
-                Monday - Friday (9:00 AM to 5:00 PM)
-              </span>
+              <span className="block pt-1 text-gray-600">24/7 - 365 Days</span>
             </div>
           </div>
         </div>

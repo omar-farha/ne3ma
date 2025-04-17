@@ -28,8 +28,8 @@ const pricingData = {
     title: "Clients / Users",
     plans: [
       {
-        name: "Basic",
-        price: "225",
+        name: "Free",
+        price: "0",
         priceDashed: "300",
         features: [
           {
@@ -42,14 +42,14 @@ const pricingData = {
           {
             icon: Repeat,
             label: "Limited smart match suggestions",
-            available: true,
+            available: false,
           },
           {
             icon: Truck,
             label: "Real-time logistics tracking",
             available: false,
           },
-          { icon: Zap, label: "Priority request matching", available: false },
+
           {
             icon: BarChart,
             label: "Monthly donation impact report",
@@ -57,13 +57,12 @@ const pricingData = {
           },
           { icon: Mail, label: "Support: Email only", available: true },
           { icon: UserPlus, label: "Max active requests: 3", available: true },
-          { icon: Eye, label: "Visibility to NGOs", available: false },
         ],
       },
       {
         name: "Plus",
-        price: "500",
-        priceDashed: "600",
+        price: "300",
+        priceDashed: "500",
         features: [
           {
             icon: MapPin,
@@ -82,7 +81,6 @@ const pricingData = {
             label: "Real-time logistics tracking",
             available: true,
           },
-          { icon: Zap, label: "Priority request matching", available: false },
           {
             icon: BarChart,
             label: "Monthly donation impact report",
@@ -93,14 +91,13 @@ const pricingData = {
             label: "Support: Email + Live Chat",
             available: true,
           },
-          { icon: UserPlus, label: "Max active requests: 10", available: true },
-          { icon: Eye, label: "Visibility to NGOs", available: true },
+          { icon: UserPlus, label: "Max active requests: 15", available: true },
         ],
       },
       {
         name: "Pro",
-        price: "700",
-        priceDashed: "950",
+        price: "500",
+        priceDashed: "700",
         features: [
           {
             icon: MapPin,
@@ -119,7 +116,6 @@ const pricingData = {
             label: "Real-time logistics tracking",
             available: true,
           },
-          { icon: Zap, label: "Priority request matching", available: true },
           {
             icon: BarChart,
             label: "Monthly donation impact report",
@@ -135,7 +131,6 @@ const pricingData = {
             label: "Max active requests: Unlimited",
             available: true,
           },
-          { icon: Eye, label: "Visibility to NGOs", available: true },
         ],
       },
     ],
@@ -155,7 +150,7 @@ const pricingData = {
           },
           {
             icon: Repeat,
-            label: "Smart matching with NGOs/users",
+            label: "Smart matching with users",
             available: true,
           },
           { icon: Truck, label: "Logistics coordination", available: false },
@@ -204,7 +199,7 @@ const pricingData = {
           },
           {
             icon: Repeat,
-            label: "Smart matching with NGOs/users",
+            label: "Smart matching with users",
             available: true,
           },
           { icon: Truck, label: "Logistics coordination", available: true },
@@ -253,7 +248,7 @@ const pricingData = {
           },
           {
             icon: Repeat,
-            label: "Smart matching with NGOs/users",
+            label: "Smart matching with users",
             available: true,
           },
           { icon: Truck, label: "Logistics coordination", available: true },
@@ -351,7 +346,7 @@ export default function Pricing() {
         </div>
 
         <span className="text-sm text-[#4B5675] text-[16px] font-[400] mt-2">
-          Save 25% with yearly subscriptions
+          Save 25% with Monthly subscriptions
         </span>
       </div>
 
