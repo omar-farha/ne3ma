@@ -78,7 +78,7 @@ function Listing({
                 href={item.id ? `/view-details/${item.id}` : "#"}
                 key={index}
               >
-                <div className="p-2 hover:border hover:border-primary cursor-pointer rounded-lg transition-all">
+                <div className="p-2 hover:border hover:border-primary cursor-pointer rounded-lg transition-all ">
                   <Image
                     src={item.listingImages?.[0]?.url || "/fallback.jpg"}
                     width={800}

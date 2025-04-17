@@ -9,8 +9,8 @@ const containerStyle = {
 
 function MapSection({ coordinates, listings }) {
   const [center, setCenter] = useState({
-    lat: 31.2001,
-    lng: 29.9187,
+    lat: 30.0363,
+    lng: 31.4758,
   });
   const [map, setMap] = React.useState(null);
 
@@ -33,7 +33,7 @@ function MapSection({ coordinates, listings }) {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={13}
+        zoom={11}
         onLoad={null}
         onUnmount={onUnmount}
       >

@@ -321,7 +321,7 @@ function EditListing() {
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                       <AlertDialogCancel>Cancel</AlertDialogCancel>
-                      <Link href="/">
+                      <Link href="/donate">
                         <AlertDialogAction onClick={() => publishBtn()}>
                           {loading ? (
                             <Loader className="animate-spin" />

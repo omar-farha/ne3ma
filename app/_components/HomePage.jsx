@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import hero from "../../public/hero.png";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   motion,
   Variants,
@@ -15,11 +15,14 @@ import tech2 from "@/public/tech-2.png";
 import tech3 from "@/public/tech-4.png";
 import banner from "@/public/process-banner.png";
 import * as variants from "@/lib/motionVariants";
-import { Box, BoxIcon, CreditCard, Laptop, ShoppingBag } from "lucide-react";
+import { Box, BoxIcon, CreditCard, Laptop, ShoppingBag, X } from "lucide-react";
 import Link from "next/link";
 
 import { PeopleReact } from "./PeopleReact";
 import { AnimatedTestimonialsDemo } from "./AboutUs";
+import Pricing from "./Pricing";
+import Footer from "./Footer";
+// import videoTO from "@/public/TutorislViedio.mp4";
 const heroMotion = {
   start: {},
   end: {
@@ -46,6 +49,10 @@ const chlideMotion = {
 };
 function HomePage() {
   const homeRef = useRef(null);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  // Add to iframe: onLoad={() => setIsLoading(false)}
+  // Show spinner while loading
 
   const { scrollYProgress } = useScroll({
     target: homeRef,
@@ -101,8 +108,46 @@ function HomePage() {
                 <Link href="/sign-in">
                   <Button>Get Started</Button>
                 </Link>
-                <Button variant="outline">Watch Tutorial</Button>
+                <Button variant="outline" onClick={() => setIsVideoOpen(true)}>
+                  Watch Tutorial
+                </Button>
               </motion.div>
+              {isVideoOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4">
+                  <div className="relative w-full max-w-6xl mx-4">
+                    {/* Close Button */}
+                    <button
+                      onClick={() => setIsVideoOpen(false)}
+                      className="absolute -top-10 right-0 z-10 text-white hover:text-gray-300"
+                    >
+                      <X size={24} />
+                    </button>
+
+                    {/* Video Container with Aspect Ratio */}
+                    <div className="relative pt-[56.25%] bg-black rounded-lg overflow-hidden">
+                      {" "}
+                      {/* 16:9 aspect ratio */}
+                      <iframe
+                        src="https://player.vimeo.com/video/1076231197?h=771460c47d&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
+                        className="absolute top-0 left-0 w-full h-full"
+                        allow="autoplay; fullscreen"
+                        allowFullScreen
+                      />
+                    </div>
+
+                    {/* Video Info (optional) */}
+                    <div className="p-4 bg-[#0c0d10] text-white rounded-b-lg">
+                      <h3 className="text-xl font-semibold">
+                        How to Use Ne3ma
+                      </h3>
+                      <p className="text-gray-300 mt-2">
+                        Learn how to get started with our platform in just 4
+                        minutes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
             <div className=" relative mt-14 max-w-screen-xl mx-auto isolate rounded-xl md:mt-16">
               <motion.figure
@@ -165,42 +210,6 @@ function HomePage() {
         </section>
         <section className="mt-16 pt-10">
           <PeopleReact />
-
-          {/* <div className=" container max-w-screen-2xl">
-          <motion.p
-            variants={variants.fadeInUp}
-            initial="start"
-            whileInView="end"
-            viewport={{ once: true }}
-            className="text-center mb-8 md:mb-10  md:text-xl text-black "
-          >
-            At Ne3ma, we are dedicated to making a positive impact through our
-            initiatives.
-          </motion.p>
-          <motion.div
-            variants={variants.staggerContainer}
-            initial="start"
-            whileInView="end"
-            viewport={{ once: true }}
-            className="flex justify-center flex-wrap gap-5 md:gap-10"
-          >
-            <motion.figure variants={variants.fadeInUp}>
-              <Image src={tech1} alt="brand" className="w-[100px]"></Image>
-            </motion.figure>
-            <motion.figure variants={variants.fadeInUp}>
-              <Image src={tech1} alt="brand" className="w-[100px] "></Image>
-            </motion.figure>
-            <motion.figure variants={variants.fadeInUp}>
-              <Image src={tech1} alt="brand" className="w-[100px]"></Image>
-            </motion.figure>
-            <motion.figure variants={variants.fadeInUp}>
-              <Image src={tech1} alt="brand" className="w-[100px]"></Image>
-            </motion.figure>
-            <motion.figure variants={variants.fadeInUp}>
-              <Image src={tech1} alt="brand" className="w-[100px]"></Image>
-            </motion.figure>
-          </motion.div>
-        </div> */}
         </section>
         <section className="py-14  mt-10 md:mt-6 md:py-18">
           <div className="container">
@@ -350,9 +359,6 @@ function HomePage() {
             </div>
           </div>
         </section>
-
-        <section>{/* <PeopleReact /> */}</section>
-
         <section className="py-12 px-6">
           <div className="max-w-4xl mx-auto text-center">
             <div className="pb-8 text-center md:pb-16 lg:max-w-screen-sm lg:mx-auto">
@@ -396,7 +402,31 @@ function HomePage() {
             </motion.div>
           </div>
         </section>
+        <section>
+          <Pricing />
+        </section>
       </div>
+
+      <section id="contact" className=" mb-2.5 bg-red-gradient my-3 ">
+        <div className="px-8 py-20 lg:flex lg:justify-center">
+          <div className="">
+            <h3 className=" max-sm:text-[17px] md:text-5xl text-2xl font-bold text-center text-white">
+              {" "}
+              Questions? We'd love to hear from you !{" "}
+            </h3>
+            <div className="items-center justify-center mt-6 flex">
+              <a href="/contact-us" className="md:text-xl text-base w-fit">
+                <button className="transform hover:scale-105 duration-500 ease-in-out text-primary font-bold  bg-white w-fit py-2 px-6 rounded md:h-12">
+                  Contact US
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <Footer />
+      </section>
     </div>
   );
 }

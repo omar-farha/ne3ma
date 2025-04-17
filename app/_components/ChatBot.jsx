@@ -152,7 +152,8 @@ const ChatBot = () => {
               <br />
               • Materials redistribution
               <br />
-              <small>Developed by: Mariam Islam (The Queen)</small>
+              • number: +201141412551
+              <br />
             </p>
           </div>
 
